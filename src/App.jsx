@@ -32,8 +32,6 @@ function App() {
         <Concept />
         <div className="sepPattern"></div>
         <Teaser />
-        {/* <section></section> */}
-        {/* <section></section> */}
         <Product activeDisplay={"chair1"} handleClick={handleClickChair} />
         <Product activeDisplay={"chair2"} handleClick={handleClickChair} />
         <Product activeDisplay={"chair3"} handleClick={handleClickChair} />

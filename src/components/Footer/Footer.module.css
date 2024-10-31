@@ -12,7 +12,6 @@
     flex-direction: column;
     place-items: center;
     position: relative;
-    /* margin-top: 2rem; */
 }
     .footerLogo p {
         font-family: "Romie", serif;
