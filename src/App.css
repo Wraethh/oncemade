@@ -1,0 +1,52 @@
+.sepPattern {
+    height: 156px;
+    margin-block: 2rem 4rem;
+    background: url("./assets/images/pattern.svg");
+}
+
+.chair1::before {
+    content: 'Audacieuse';
+    padding: .5rem 1rem;
+    border: 2px solid var(--dark-color);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--light-color);
+    top: 20%;
+    left: 20%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.chair2::before {
+    content: 'Curieuse';
+    padding: .5rem 1rem;
+    border: 2px solid var(--dark-color);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--light-color);
+    top: 1%;
+    left: 98%;
+    transform: translate(-50%, -50%) rotate(10deg);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.chair3:before {
+    content: 'Éco-conçue';
+    display: grid;
+    place-items: center;
+    min-width: 90px;
+    padding: .5rem 1rem;
+    border: 2px solid var(--dark-color);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--light-color);
+    top: 80%;
+    left: 98%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.chair1:hover::before, .chair2:hover::before, .chair3:hover::before {
+    opacity: 1;
+    transition: opacity .2s ease;
+}

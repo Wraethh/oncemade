@@ -1,0 +1,52 @@
+.designerLogo {
+    grid-column: 2/5;
+    grid-row: 2/3;
+    max-width: 500px;
+}
+    .designerLogo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    } 
+
+.designerPic {
+    grid-column: 1/6;
+    grid-row: 3/9;
+    background-image: url("../../assets/images/bgPattern1.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid;
+    place-items: center;
+}
+    .designerPic img {
+        width: 100%;
+        max-width: 500px;
+        object-fit: contain;
+        border-radius: 10px;
+    } 
+
+
+.designerDesc {
+    grid-column: 6/9;
+    grid-row: 1/9;
+    background-color: var(--second-color);
+    padding: 50px;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow-y: auto;
+}
+
+.designerDesc > * {
+    color: var(--light-color);
+}
+
+.designerDesc p:first-of-type {
+    font-size: 1.3em;
+}
+
+.designerDesc p:last-of-type {
+    font-size: .9em;
+}

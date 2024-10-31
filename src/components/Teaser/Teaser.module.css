@@ -1,0 +1,14 @@
+.teaser {
+    background-color: var(--dark-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.teaser video {
+    width: 70%;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 15px;
+}
