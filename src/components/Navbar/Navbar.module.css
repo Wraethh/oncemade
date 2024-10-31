@@ -5,8 +5,8 @@
     transform: translateX(-50%);
     width: 100%;
     background-color: var(--light-color);
-    border-top: 2px solid var(--dark-color); 
-    border-bottom: 2px solid var(--dark-color);
+    border-top: 1px solid var(--dark-color); 
+    border-bottom: 1px solid var(--dark-color);
     z-index: 10;
 }
 
@@ -24,6 +24,7 @@
 
 .navbar > ul li {
     font-size: 1em;
+    position: relative;
 }
 
 .navbar > ul li:last-child {
@@ -31,4 +32,22 @@
     color: var(--light-color);
     padding: .7rem 1.5rem;
     border-radius: 10px;
+}
+
+.navbar > ul li:not(:last-child, :first-child)::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: url("../../assets/images/borderImg.svg") no-repeat center;
+    background-size: 90px;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.navbar > ul li:not(:last-child, :first-child):hover::before {
+    opacity: 1;
+    transition: opacity .3s ease;
 }

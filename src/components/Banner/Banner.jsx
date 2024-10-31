@@ -4,7 +4,7 @@ export default function Banner() {
   return (
     <div className={styles.banner}>
       <div className={styles.bannerText}>
-        Prenez rendez-vous pour assister à l’événement de lancement
+        Prenez rendez-vous pour découvrir notre chaise Zenith dans notre galerie
       </div>
     </div>
   );

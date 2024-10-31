@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [activeChairDisplay, setActiveChairDisplay] = useState("chair1");
+  const [activeChairDisplay, setActiveChairDisplay] = useState("home");
 
   useEffect(() => {
     document
@@ -32,6 +32,8 @@ function App() {
         <Concept />
         <div className="sepPattern"></div>
         <Teaser />
+        {/* <section></section> */}
+        {/* <section></section> */}
         <Product activeDisplay={"chair1"} handleClick={handleClickChair} />
         <Product activeDisplay={"chair2"} handleClick={handleClickChair} />
         <Product activeDisplay={"chair3"} handleClick={handleClickChair} />

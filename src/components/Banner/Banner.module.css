@@ -2,7 +2,6 @@
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
-    background-color: white;
     padding: 10px 0;
     margin-top: 3rem;
     border-block: 1px solid var(--dark-color);
@@ -14,7 +13,7 @@
     font-weight: bold;
     display: inline-block;
     padding-left: 100%; /* Commence le texte en dehors du conteneur */
-    animation: marquee 10s linear infinite;
+    animation: marquee 15s linear infinite;
 }
 
 @keyframes marquee {
@@ -24,4 +23,9 @@
     to {
         transform: translateX(-100%);
     }
+}
+
+.bannerText:hover {
+    animation: none;
+    padding-left: 0;
 }
