@@ -8,7 +8,7 @@ import Product from "./components/Product/Product";
 import Banner from "./components/Banner/Banner";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -32,18 +32,6 @@ function App() {
     });
   }, []);
 
-  const [activeChairDisplay, setActiveChairDisplay] = useState("home");
-
-  useEffect(() => {
-    document
-      .getElementById(activeChairDisplay)
-      .scrollIntoView({ behavior: "smooth" });
-  }, [activeChairDisplay]);
-
-  const handleClickChair = (e) => {
-    setActiveChairDisplay(e.currentTarget.value);
-  };
-
   return (
     <>
       <Navbar />
@@ -56,17 +44,14 @@ function App() {
         <Product
           ref={(el) => (productSectionsRef.current[0] = el)}
           activeDisplay={"chair1"}
-          handleClick={handleClickChair}
         />
         <Product
           ref={(el) => (productSectionsRef.current[1] = el)}
           activeDisplay={"chair2"}
-          handleClick={handleClickChair}
         />
         <Product
           ref={(el) => (productSectionsRef.current[2] = el)}
           activeDisplay={"chair3"}
-          handleClick={handleClickChair}
         />
         <Banner />
         <Contact />

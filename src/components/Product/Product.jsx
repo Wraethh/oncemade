@@ -9,7 +9,7 @@ import chairSm2 from "../../assets/images/chair/chairSm2.png";
 import chairSm3 from "../../assets/images/chair/chairSm3.png";
 
 // Utilisation de forwardRef pour accepter la référence
-const Product = forwardRef(({ activeDisplay, handleClick }, ref) => {
+const Product = forwardRef(({ activeDisplay }, ref) => {
   const chairSelect = [
     { id: "chair1", img: chairSm1, desc: "édition limitée de 50 pièces" },
     { id: "chair2", img: chairSm2, desc: "design élégant et intemporel" },
@@ -21,24 +21,22 @@ const Product = forwardRef(({ activeDisplay, handleClick }, ref) => {
       <div className={styles.productDisplay}>
         <div className={styles.productsSmall}>
           {chairSelect.map((chair) => (
-            <button
+            <div
               key={chair.id}
-              value={chair.id}
-              onClick={(e) => handleClick(e)}
               className={activeDisplay === chair.id ? styles.active : ""}
             >
               <figure>
                 <img src={chair.img} alt="chair" />
                 <figcaption>{chair.desc}</figcaption>
               </figure>
-            </button>
+            </div>
           ))}
         </div>
         <div className={styles.productBig}>
           <h2>
             La chaise <em>Zenith</em>
           </h2>
-          <div>
+          <div className={activeDisplay}>
             {activeDisplay === "chair1" && (
               <img src={chairBig1} alt="chair zenith" />
             )}
@@ -63,7 +61,6 @@ const Product = forwardRef(({ activeDisplay, handleClick }, ref) => {
 
 Product.propTypes = {
   activeDisplay: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
 };
 
 Product.displayName = "Product";
