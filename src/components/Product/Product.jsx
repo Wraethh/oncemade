@@ -1,5 +1,6 @@
-import styles from "./Product.module.css";
+import { forwardRef } from "react";
 import PropTypes from "prop-types";
+import styles from "./Product.module.css";
 import chairBig1 from "../../assets/images/chair/chairBig1.jpg";
 import chairBig2 from "../../assets/images/chair/chairBig2.jpg";
 import chairBig3 from "../../assets/images/chair/chairBig3.jpg";
@@ -7,7 +8,8 @@ import chairSm1 from "../../assets/images/chair/chairSm1.png";
 import chairSm2 from "../../assets/images/chair/chairSm2.png";
 import chairSm3 from "../../assets/images/chair/chairSm3.png";
 
-export default function Product({ activeDisplay, handleClick }) {
+// Utilisation de forwardRef pour accepter la référence
+const Product = forwardRef(({ activeDisplay, handleClick }, ref) => {
   const chairSelect = [
     { id: "chair1", img: chairSm1, desc: "édition limitée de 50 pièces" },
     { id: "chair2", img: chairSm2, desc: "design élégant et intemporel" },
@@ -15,30 +17,28 @@ export default function Product({ activeDisplay, handleClick }) {
   ];
 
   return (
-    <section id={activeDisplay} className={styles.product}>
+    <section ref={ref} id={activeDisplay} className={styles.product}>
       <div className={styles.productDisplay}>
         <div className={styles.productsSmall}>
-          {chairSelect.map((chair) => {
-            return (
-              <button
-                key={chair.id}
-                value={chair.id}
-                onClick={(e) => handleClick(e)}
-                className={activeDisplay === chair.id && styles.active}
-              >
-                <figure>
-                  <img src={chair.img} alt="chair" />
-                  <figcaption>{chair.desc}</figcaption>
-                </figure>
-              </button>
-            );
-          })}
+          {chairSelect.map((chair) => (
+            <button
+              key={chair.id}
+              value={chair.id}
+              onClick={(e) => handleClick(e)}
+              className={activeDisplay === chair.id ? styles.active : ""}
+            >
+              <figure>
+                <img src={chair.img} alt="chair" />
+                <figcaption>{chair.desc}</figcaption>
+              </figure>
+            </button>
+          ))}
         </div>
         <div className={styles.productBig}>
           <h2>
             La chaise <em>Zenith</em>
           </h2>
-          <div className={activeDisplay}>
+          <div>
             {activeDisplay === "chair1" && (
               <img src={chairBig1} alt="chair zenith" />
             )}
@@ -59,9 +59,12 @@ export default function Product({ activeDisplay, handleClick }) {
       </div>
     </section>
   );
-}
+});
 
 Product.propTypes = {
   activeDisplay: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
 };
+
+Product.displayName = "Product";
+export default Product;

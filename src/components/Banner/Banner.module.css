@@ -24,8 +24,3 @@
         transform: translateX(-100%);
     }
 }
-
-.bannerText:hover {
-    animation: none;
-    padding-left: 0;
-}
