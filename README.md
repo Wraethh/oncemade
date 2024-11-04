@@ -3,7 +3,7 @@
 
 Do you already own everything ? Buying isn't as exciting as it once was and you don't know what to do with your money ? We've got the perfect product for you : the **Zenith** chair.
 
-![Home page](/screenshots/screen1.png)
+![Home page](public/screenshots/screen1.png)
 
 
 ## 📝 Description
